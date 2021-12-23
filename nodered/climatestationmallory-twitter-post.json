@@ -1,0 +1,71 @@
+[
+  {
+    "id": "845d753b.f28c2",
+    "type": "mqtt in",
+    "z": "30afd561.206fea",
+    "name": "",
+    "topic": "YOUR-MQTT-TOPIC",
+    "qos": "0",
+    "datatype": "json",
+    "broker": "bc0ed854.c36248",
+    "x": 120,
+    "y": 2240,
+    "wires": [
+      [
+        "99fd08ce.3cd7d",
+        "ed201ac0.9d711"
+      ]
+    ]
+  },
+  {
+    "id": "a5e469f.15c3218",
+    "type": "twitter out",
+    "z": "30afd561.206fea",
+    "twitter": "",
+    "name": "Tweet wind rose graphic",
+    "x": 710,
+    "y": 2240,
+    "wires": []
+  },
+  {
+    "id": "99fd08ce.3cd7d",
+    "type": "function",
+    "z": "30afd561.206fea",
+    "name": "Build tweet",
+    "func": "img = Buffer.from(msg.payload.media, 'base64');\nmsg.media = img;\n\nmsg.payload = msg.payload.message + \" \" + msg.payload.hash_tags;\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 330,
+    "y": 2240,
+    "wires": [
+      [
+        "a5e469f.15c3218"
+      ]
+    ]
+  },
+  {
+    "id": "bc0ed854.c36248",
+    "type": "mqtt-broker",
+    "name": "YOUR-MQTT-BROKER-NAME",
+    "broker": "YOUR-MQTT-BROKER-ADDRESS",
+    "port": "YOUR-MQTT-BROKER-PORT",
+    "clientid": "",
+    "usetls": false,
+    "compatmode": false,
+    "protocolVersion": 4,
+    "keepalive": "60",
+    "cleansession": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthPayload": "",
+    "closeTopic": "",
+    "closeQos": "0",
+    "closePayload": "",
+    "willTopic": "",
+    "willQos": "0",
+    "willPayload": ""
+  }
+]

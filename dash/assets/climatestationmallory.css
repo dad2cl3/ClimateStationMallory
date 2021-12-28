@@ -1,0 +1,176 @@
+/* Universal styling */
+
+.card-header {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.card-header-span {
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.section-card {
+    margin-bottom: 1rem;
+}
+
+.subsection-card {
+    margin-bottom: 1rem;
+}
+/* current.py */
+/*#current-conditions-row {*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*#current-conditions-icon {*/
+/*    text-align: center;*/
+/*    padding-bottom: 0px;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+/*#current-conditions-description {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#current-temperature {*/
+/*    font-weight: bold;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#daily-low-temp-time {*/
+/*    text-align: center;*/
+/*    color: blue;*/
+/*}*/
+
+/*#daily-high-temp-time {*/
+/*    text-align: center;*/
+/*    color: red;*/
+/*}*/
+
+/*#average-wind-speed {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#wind-direction {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#feels-like-label {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#feels-like-temperature {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#forecast-icon {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#forecast-hour-day {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#forecast-temp {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#forecast-temp-range {*/
+/*    text-align: center;*/
+/*}*/
+
+/* host.py */
+.battery-status-legend {
+    padding-right: 8px;
+    font-size: 0.75em;
+}
+/* Size-specific styling */
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+/*#sidebar {*/
+/*    padding-top: 8px;*/
+/*    padding-bottom: 8px;*/
+/*}*/
+
+/*#page-content{*/
+/*    padding-top: 8px;*/
+/*    padding-bottom: 8px;*/
+/*}*/
+
+/*#subsection-card {*/
+/*    margin-bottom: 16px;*/
+/*}*/
+
+/*#current-conditions-icon {*/
+/*    font-size: 3em;*/
+/*}*/
+
+/*#current-conditions-description {*/
+/*    padding-bottom: 16px;*/
+/*}*/
+
+/*#current-temperature {*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*#daily-low-temp-time {*/
+/*    font-size: 0.5em;*/
+/*}*/
+
+/*#daily-high-temp-time {*/
+/*    font-size: 0.5em;*/
+/*}*/
+
+/*#average-wind-speed {*/
+/*    padding-top: 4px;*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*#wind-direction {*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*#feels-like-label {*/
+/*    padding-top: 4px;*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*#feels-like-temperature {*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*#forecast-temp {*/
+/*    padding-bottom: 16px;*/
+/*}*/
+
+/*#forecast-temp-range {*/
+/*    padding-bottom: 16px;*/
+/*}*/
+
+/*.mallory-gauge {*/
+
+/*}*/
+
+/*.mallory-graph {*/
+
+/*}*/
+/*#voltage-graph {*/
+/*    visibility: hidden;*/
+/*    display: none;*/
+/*}*/
+
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+

@@ -56,7 +56,7 @@ def render_page_content(pathname):
         return skyweather2.indoor.build_indoor_page(cache)
     elif pathname == "/skyweather2/outdoor":
         return skyweather2.outdoor.build_outdoor_page(cache)
-    elif pathname == "/weathersense/air-quality":
+    elif pathname == "/weathersense/airquality":
         return weathersense.airquality.build_airquality_page(cache)
     elif pathname == "/weathersense/earthquake":
         return weathersense.earthquake.build_earthquake_page(cache)

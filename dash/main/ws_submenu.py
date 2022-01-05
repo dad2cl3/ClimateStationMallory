@@ -28,15 +28,15 @@ ws_submenu = [
         [
             dbc.NavLink(
                 "Air Quality",
-                href="/weathersense/air-quality"
-            ),
-            dbc.NavLink(
-                "Lightning",
-                href="/weathersense/lightning"
+                href="/weathersense/airquality"
             ),
             dbc.NavLink(
                 "Earthquake",
                 href="/weathersense/earthquake"
+            ),
+            dbc.NavLink(
+                "Lightning",
+                href="/weathersense/lightning"
             ),
             dbc.NavLink(
                 "SolarMAX2",

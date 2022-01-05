@@ -154,14 +154,26 @@ def build_daily_rain_totals():
     # open database connection
     db = open_db_conn()
 
+    # get number days current month
+    today = pd.Timestamp.now(tz='US/Eastern')
+    num_days = today.days_in_month
+
+    days = []
+
+    for i in range(1, num_days + 1):
+        days.append(i)
+    days_df = pd.DataFrame(data=days, columns=['day'])
+
     # get current month daily rain totals
     daily_rain_totals = get_daily_rain_totals(db)
+    merged_daily_rain_totals = days_df.combine_first(daily_rain_totals).fillna(0)
 
     # close database connection
     close_db_conn(db)
 
     # build graph figure
-    image_jpg = build_graph_figure(daily_rain_totals)
+    # image_jpg = build_graph_figure(daily_rain_totals)
+    image_jpg = build_graph_figure(merged_daily_rain_totals)
     # image_jpg.show() # debug
 
     # encode image

@@ -1,4 +1,4 @@
-import drawSvg as draw
+# import drawSvg as draw
 import json
 import pg8000 as pg
 from paho.mqtt import publish
@@ -26,6 +26,9 @@ CANVAS_HEIGHT = 675
 TEXT_FONT_FAMILY = 'Roboto'
 
 CALENDAR_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov' 'Dec']
+FULL_CALENDAR_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+MONTHS_COLUMN = ['str_month']
+months_df = pd.DataFrame(data=FULL_CALENDAR_MONTHS, columns=MONTHS_COLUMN)
 
 
 def open_db_conn():
@@ -66,7 +69,9 @@ def build_graph_figure(pandas_data_table):
         data=[go.Bar(
             x=df_x,
             y=df_y,
-            text=df_x,
+            text=df_y,
+            textposition='inside',
+            marker_color='#1ca3ec'
             # width=0.25
         )]
 
@@ -87,6 +92,10 @@ def build_graph_figure(pandas_data_table):
         },
         width=1200,
         height=675
+    )
+
+    fig.update_traces(
+        width=0.5
     )
 
     return fig
@@ -135,17 +144,20 @@ def build_monthly_rain_totals():
 
     # get current month daily rain totals
     monthly_rain_totals = get_monthly_rain_totals(db)
+    merged_monthly_rain_totals = months_df.combine_first(monthly_rain_totals).fillna(0)
+    # print(merged_monthly_rain_totals)  # debug
 
     # close database connection
     close_db_conn(db)
 
     # build graph figure
-    image_jpg = build_graph_figure(monthly_rain_totals)
-    image_jpg.show()
+    # image_jpg = build_graph_figure(monthly_rain_totals)
+    image_jpg = build_graph_figure(merged_monthly_rain_totals)
+    # image_jpg.show()  # debug
     # encode image
-    # encoded_image = encode_image(image_jpg)
+    encoded_image = encode_image(image_jpg)
 
-    # publish_tweet(encoded_image)
+    publish_tweet(encoded_image)
 
     return 'success'
 
